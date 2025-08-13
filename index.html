@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kishore S • Portfolio</title>
+<style>
+:root{
+  --bg:#0b1220;--panel:#121826;--text:#e5e7eb;--muted:#9ca3af;
+  --brand:#22d3ee;--accent:#60a5fa;--chip:#1f2937;--border:#222a3a;
+}
+.light{
+  --bg:#ffffff;--panel:#f8fafc;--text:#111827;--muted:#6b7280;
+  --brand:#0891b2;--accent:#2563eb;--chip:#e5e7eb;--border:#e5e7eb;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.container{width:min(1100px,92%);margin:auto}
+header{background:var(--panel);border-bottom:1px solid var(--border);padding:28px 0}
+header h1{margin:0;font-size:1.9rem;letter-spacing:.3px}
+header p{margin:6px 0 14px;color:var(--muted)}
+.btn{padding:9px 14px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;margin:4px 6px 0 0}
+.btn.primary{background:var(--brand);border-color:transparent;color:#000}
+.btn.ghost{background:var(--chip)}
+.badge{display:inline-block;background:var(--chip);padding:6px 10px;border-radius:999px;margin:4px;color:var(--text);font-size:.92rem;border:1px solid var(--border)}
+section{margin:28px 0}
+h2{margin:0 0 10px;font-size:1.25rem}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px;margin:12px 0}
+.card h3{margin:0 0 6px}
+.row{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.col-6{grid-column:span 6}
+.col-12{grid-column:span 12}
+@media (max-width:800px){.col-6{grid-column:span 12}}
+small, .muted{color:var(--muted)}
+input[type="search"]{padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);width:100%;max-width:360px}
+footer{margin-top:28px;background:var(--panel);border-top:1px solid var(--border);padding:18px 0;text-align:center;color:var(--muted)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.hr{height:1px;background:var(--border);margin:16px 0}
+.header-actions{display:flex;flex-wrap:wrap;gap:8px}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:6px;max-width:640px}
+.kv div:first-child{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Kishore S</h1>
+    <p>Computer Science Graduate • Cybersecurity Enthusiast • Java & Web (HTML/CSS)</p>
+    <div class="header-actions">
+      <button class="btn primary" onclick="location.href='mailto:kishoresundaram71@gmail.com'">Email</button>
+      <button class="btn" onclick="window.open('https://github.com/kishoresundaram','_blank')">GitHub</button>
+      <button class="btn" onclick="window.open('https://www.linkedin.com/in/kishore-s','_blank')">LinkedIn</button>
+      <button class="btn ghost" onclick="toggleTheme()" id="themeBtn">Toggle Theme</button>
+      <button class="btn" onclick="downloadResume()">⬇ Download Resume</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Summary / Contact -->
+  <section class="card">
+    <h2>Profile</h2>
+    <div class="kv">
+      <div>Location</div><div>India</div>
+      <div>Email</div><div><a href="mailto:kishoresundaram71@gmail.com">kishoresundaram71@gmail.com</a></div>
+      <div>GitHub</div><div><a href="https://github.com/kishoresundaram" target="_blank">github.com/kishoresundaram</a></div>
+      <div>LinkedIn</div><div><a href="https://www.linkedin.com/in/kishore-s" target="_blank">linkedin.com/in/kishore-s</a></div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Skills</h2>
+    <div>
+      <span class="badge">Java</span>
+      <span class="badge">C</span>
+      <span class="badge">C++</span>
+      <span class="badge">HTML & CSS</span>
+      <span class="badge">MySQL</span>
+      <span class="badge">Web Development</span>
+      <span class="badge">MATLAB</span>
+      <span class="badge">Excel</span>
+      <span class="badge">Cyber Security</span>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <div class="row">
+      <div class="col-6"><h2>Projects</h2></div>
+      <div class="col-6" style="text-align:right">
+        <input id="search" type="search" placeholder="Filter projects (e.g., deepfake, java)" />
+      </div>
+    </div>
+
+    <div id="projects">
+      <div class="card" data-tags="machine learning price prediction">
+        <h3>Raw Materials Price Prediction</h3>
+        <p class="muted">ML model forecasting raw material prices using historical trends and indicators.</p>
+      </div>
+
+      <div class="card" data-tags="deepfake detection medical images vae gan pso">
+        <h3>Deepfake Detection in Medical Images</h3>
+        <p class="muted">VAE-GAN with PSO for detecting manipulated medical images; achieved high accuracy on labeled set. (Paper/Report available)</p>
+      </div>
+
+      <div class="card" data-tags="iot co2 sensor">
+        <h3>CO₂ Detection with IoT</h3>
+        <p class="muted">Sensor-based CO₂ monitoring with microcontroller integration and simple analytics.</p>
+      </div>
+
+      <div class="card" data-tags="java student record management">
+        <h3>Student Record Management (Java)</h3>
+        <p class="muted">Console CRUD app using OOP and ArrayLists; input validation and data persistence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section>
+    <h2>Certifications</h2>
+    <ul class="muted" style="margin:0;padding-left:18px">
+      <li>Oracle Cloud Infrastructure 2023 Data Science Professional</li>
+      <li>Database Foundations (Oracle)</li>
+      <li>Udemy — Certified Information Security Manager (training)</li>
+      <li>CISCO — Cyber Security Essentials</li>
+      <li>CISCO — Ethical Hacker</li>
+    </ul>
+  </section>
+
+  <!-- Education & Experience -->
+  <section class="row">
+    <div class="col-6">
+      <div class="card">
+        <h2>Education</h2>
+        <p class="muted">B.E. / B.Tech (CSE) — details per resume</p>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <h2>Experience</h2>
+        <p class="muted">Internships / roles listed in resume (e.g., Java/CS projects, research/report work).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobbies -->
+  <section>
+    <h2>Hobbies</h2>
+    <span class="badge">Film Analysis</span>
+    <span class="badge">Basketball</span>
+    <span class="badge">Blogging</span>
+    <span class="badge">Script Writing</span>
+  </section>
+
+  <div class="hr"></div>
+  <p class="muted">Tip: replace text with exact dates/GPAs/roles from your resume before publishing.</p>
+</main>
+
+<footer>
+  © 2025 • Kishore S • <a href="mailto:kishoresundaram71@gmail.com">Contact</a>
+</footer>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  document.getElementById('themeBtn').textContent =
+    document.body.classList.contains('light') ? 'Toggle Theme' : 'Toggle Theme';
+}
+function downloadResume(){
+  // Expects resume.pdf in the same folder as index.html
+  window.open('resume.pdf', '_blank');
+}
+document.getElementById('search').addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase();
+  document.querySelectorAll('#projects .card').forEach(c=>{
+    const tags = (c.getAttribute('data-tags')||'').toLowerCase();
+    c.style.display = q==='' || tags.includes(q) ? '' : 'none';
+  });
+});
+</script>
+
+</body>
+</html>
