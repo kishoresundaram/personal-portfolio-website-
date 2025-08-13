@@ -1,186 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Kishore S • Portfolio</title>
-<style>
-:root{
-  --bg:#0b1220;--panel:#121826;--text:#e5e7eb;--muted:#9ca3af;
-  --brand:#22d3ee;--accent:#60a5fa;--chip:#1f2937;--border:#222a3a;
-}
-.light{
-  --bg:#ffffff;--panel:#f8fafc;--text:#111827;--muted:#6b7280;
-  --brand:#0891b2;--accent:#2563eb;--chip:#e5e7eb;--border:#e5e7eb;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:var(--bg);color:var(--text)}
-.container{width:min(1100px,92%);margin:auto}
-header{background:var(--panel);border-bottom:1px solid var(--border);padding:28px 0}
-header h1{margin:0;font-size:1.9rem;letter-spacing:.3px}
-header p{margin:6px 0 14px;color:var(--muted)}
-.btn{padding:9px 14px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;margin:4px 6px 0 0}
-.btn.primary{background:var(--brand);border-color:transparent;color:#000}
-.btn.ghost{background:var(--chip)}
-.badge{display:inline-block;background:var(--chip);padding:6px 10px;border-radius:999px;margin:4px;color:var(--text);font-size:.92rem;border:1px solid var(--border)}
-section{margin:28px 0}
-h2{margin:0 0 10px;font-size:1.25rem}
-.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px;margin:12px 0}
-.card h3{margin:0 0 6px}
-.row{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-.col-6{grid-column:span 6}
-.col-12{grid-column:span 12}
-@media (max-width:800px){.col-6{grid-column:span 12}}
-small, .muted{color:var(--muted)}
-input[type="search"]{padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);width:100%;max-width:360px}
-footer{margin-top:28px;background:var(--panel);border-top:1px solid var(--border);padding:18px 0;text-align:center;color:var(--muted)}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.hr{height:1px;background:var(--border);margin:16px 0}
-.header-actions{display:flex;flex-wrap:wrap;gap:8px}
-.kv{display:grid;grid-template-columns:150px 1fr;gap:6px;max-width:640px}
-.kv div:first-child{color:var(--muted)}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kishore S — Portfolio</title>
+  <meta name="description" content="Kishore S — B.Tech CSE | Java, MATLAB, MySQL, Cybersecurity. Portfolio showcasing projects and contact info.">
+
+  <style>
+    /* Reset & base */
+    :root{
+      --bg:#0f1724; --card:#0b1622; --muted:#94a3b8; --accent:#4f46e5; --glass: rgba(255,255,255,0.04);
+      --max-width: 1000px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg), #071025 160%);
+      color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.5; padding:40px 20px;
+      display:flex; justify-content:center;
+    }
+
+    .container{width:100%; max-width:var(--max-width);} 
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{width:58px;height:58px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:2px 0 0;color:var(--muted);font-size:13px}
+
+    /* layout */
+    main{display:grid;grid-template-columns:1fr;gap:20px}
+    @media(min-width:900px){main{grid-template-columns: 320px 1fr}}
+
+    /* sidebar */
+    aside{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+    .section-title{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+    .bio{font-size:14px;margin-bottom:12px}
+    .contact a{display:block;color:#dbeafe;text-decoration:none;margin:6px 0;font-size:14px}
+    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}
+    .skill{background:var(--glass);padding:8px;border-radius:8px;font-size:13px;color:var(--muted)}
+
+    /* main content cards */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .projects{display:grid;gap:12px}
+    .proj{display:block;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+    .proj h3{margin:0 0 6px;font-size:16px}
+    .proj p{margin:0;color:var(--muted);font-size:13px}
+    .meta{margin-top:8px;font-size:13px;color:var(--muted)}
+
+    /* skills chips */
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 10px;border-radius:999px;background:var(--glass);font-size:13px;color:var(--muted)}
+
+    /* contact */
+    .contact-form{display:grid;gap:8px}
+    .contact-form a{display:inline-block;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;text-decoration:none}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* small utilities */
+    .row{display:flex;gap:12px;align-items:center}
+    .muted{color:var(--muted)}
+    .divider{height:1px;background:rgba(255,255,255,0.02);margin:12px 0;border-radius:2px}
+
+    /* accessibility */
+    a:focus{outline:3px solid rgba(79,70,229,0.25);outline-offset:2px}
+
+    /* print-friendly */
+    @media print{body{background:white;color:black} .container{max-width:100%} }
+
+    /* small logo/link styles */
+    .social-links{display:flex;gap:8px;margin-top:8px}
+    .social-links a{font-size:13px;color:var(--muted);text-decoration:none}
+
+    /* subtle hover */
+    .proj:hover{transform:translateY(-4px);transition:transform 180ms ease}
+  </style>
 </head>
 <body>
-
-<header>
   <div class="container">
-    <h1>Kishore S</h1>
-    <p>Computer Science Graduate • Cybersecurity Enthusiast • Java & Web (HTML/CSS)</p>
-    <div class="header-actions">
-      <button class="btn primary" onclick="location.href='mailto:kishoresundaram71@gmail.com'">Email</button>
-      <button class="btn" onclick="window.open('https://github.com/kishoresundaram','_blank')">GitHub</button>
-      <button class="btn" onclick="window.open('https://www.linkedin.com/in/kishore-s','_blank')">LinkedIn</button>
-      <button class="btn ghost" onclick="toggleTheme()" id="themeBtn">Toggle Theme</button>
-      <button class="btn" onclick="downloadResume()">⬇ Download Resume</button>
-    </div>
+    <header>
+      <div class="brand">
+        <div class="avatar">KS</div>
+        <div>
+          <h1>Kishore S — B.Tech CSE</h1>
+          <p class="lead">Java • MATLAB • MySQL • Cybersecurity • Web Dev</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="muted">Based in India</div>
+      </div>
+    </header>
+
+    <main>
+      <aside class="card">
+        <div class="section-title">About</div>
+        <p class="bio">I am a motivated B.Tech CSE graduate building practical software projects across Java, web development, and machine learning. I enjoy cybersecurity and data-driven applications.</p>
+
+        <div class="divider"></div>
+
+        <div>
+          <div class="section-title">Contact</div>
+          <div class="contact">
+            <a href="tel:+919600341887">+91 9600341887</a>
+            <a href="mailto:kishoresundaram71@gmail.com">kishoresundaram71@gmail.com</a>
+            <a href="https://www.linkedin.com/in/kishore-s/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/kishoresundaram" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div>
+          <div class="section-title">Skills</div>
+          <div class="skills">
+            <div class="skill">Java</div>
+            <div class="skill">MATLAB</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">Figma</div>
+            <div class="skill">MS Excel</div>
+            <div class="skill">Ethical Hacking</div>
+            <div class="skill">Cybersecurity</div>
+          </div>
+        </div>
+
+      </aside>
+
+      <section>
+        <div class="card">
+          <div class="section-title">Featured Projects</div>
+          <div class="projects">
+
+            <article class="proj">
+              <h3>Student Record Management — Java</h3>
+              <p>Console application using OOP and ArrayList for CRUD operations. Exception handling and modular design for maintainability.</p>
+              <div class="meta">Tools: Java • ArrayList • Serialization — Year: 2024</div>
+            </article>
+
+            <article class="proj">
+              <h3>Smart Habit Tracker — Java</h3>
+              <p>Menu-driven console app with file-based persistent storage and streak-based progress tracking to boost productivity.</p>
+              <div class="meta">Tools: Java • Serialization — 2024–2025</div>
+            </article>
+
+            <article class="proj">
+              <h3>Deepfake Detection in Medical Images (VAE–GAN)</h3>
+              <p>VAE+GAN pipeline with PSO for hyperparameter tuning; advanced preprocessing achieved 95.8% detection accuracy.</p>
+              <div class="meta">Tools: Python • VAE • GAN • PSO — 2023–2024</div>
+            </article>
+
+            <article class="proj">
+              <h3>Personal Portfolio Website</h3>
+              <p>Responsive single-page portfolio built with HTML & CSS; includes theme-friendly styling and client-side project search (no JS).</p>
+              <div class="meta">Tools: HTML • CSS — 2024–2025</div>
+            </article>
+
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <div class="section-title">Technical Highlights</div>
+          <div class="chips" style="margin-top:10px">
+            <span class="chip">OOP</span>
+            <span class="chip">Data Structures</span>
+            <span class="chip">Image Processing</span>
+            <span class="chip">Model Tuning</span>
+            <span class="chip">Git & GitHub</span>
+            <span class="chip">Responsive Design</span>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <div class="section-title">Certifications & Achievements</div>
+          <ul style="margin:8px 0 0 18px;color:var(--muted)">
+            <li>Information Security Manager — Udemy</li>
+            <li>Certified Ethical Hacker — CISCO</li>
+            <li>Cybersecurity Essentials — CISCO</li>
+            <li>Java Complete Course — Udemy</li>
+            <li>Database Foundations — Oracle</li>
+            <li>Cloud Infrastructure 2023 Data Science Professional — Oracle</li>
+          </ul>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <div class="section-title">Get in touch</div>
+          <p class="muted">I'd love to collaborate on projects or discuss opportunities. Click below to send an email.</p>
+          <div class="contact-form" style="margin-top:10px">
+            <a href="mailto:kishoresundaram71@gmail.com?subject=Hello%20Kishore">Email Me</a>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/kishore-s/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/kishoresundaram" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          © <span id="year">2025</span> Kishore S — Built with HTML & CSS • No JavaScript
+        </footer>
+
+      </section>
+    </main>
   </div>
-</header>
-
-<main class="container">
-  <!-- Summary / Contact -->
-  <section class="card">
-    <h2>Profile</h2>
-    <div class="kv">
-      <div>Location</div><div>India</div>
-      <div>Email</div><div><a href="mailto:kishoresundaram71@gmail.com">kishoresundaram71@gmail.com</a></div>
-      <div>GitHub</div><div><a href="https://github.com/kishoresundaram" target="_blank">github.com/kishoresundaram</a></div>
-      <div>LinkedIn</div><div><a href="https://www.linkedin.com/in/kishore-s" target="_blank">linkedin.com/in/kishore-s</a></div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section>
-    <h2>Skills</h2>
-    <div>
-      <span class="badge">Java</span>
-      <span class="badge">C</span>
-      <span class="badge">C++</span>
-      <span class="badge">HTML & CSS</span>
-      <span class="badge">MySQL</span>
-      <span class="badge">Web Development</span>
-      <span class="badge">MATLAB</span>
-      <span class="badge">Excel</span>
-      <span class="badge">Cyber Security</span>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section>
-    <div class="row">
-      <div class="col-6"><h2>Projects</h2></div>
-      <div class="col-6" style="text-align:right">
-        <input id="search" type="search" placeholder="Filter projects (e.g., deepfake, java)" />
-      </div>
-    </div>
-
-    <div id="projects">
-      <div class="card" data-tags="machine learning price prediction">
-        <h3>Raw Materials Price Prediction</h3>
-        <p class="muted">ML model forecasting raw material prices using historical trends and indicators.</p>
-      </div>
-
-      <div class="card" data-tags="deepfake detection medical images vae gan pso">
-        <h3>Deepfake Detection in Medical Images</h3>
-        <p class="muted">VAE-GAN with PSO for detecting manipulated medical images; achieved high accuracy on labeled set. (Paper/Report available)</p>
-      </div>
-
-      <div class="card" data-tags="iot co2 sensor">
-        <h3>CO₂ Detection with IoT</h3>
-        <p class="muted">Sensor-based CO₂ monitoring with microcontroller integration and simple analytics.</p>
-      </div>
-
-      <div class="card" data-tags="java student record management">
-        <h3>Student Record Management (Java)</h3>
-        <p class="muted">Console CRUD app using OOP and ArrayLists; input validation and data persistence.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications -->
-  <section>
-    <h2>Certifications</h2>
-    <ul class="muted" style="margin:0;padding-left:18px">
-      <li>Oracle Cloud Infrastructure 2023 Data Science Professional</li>
-      <li>Database Foundations (Oracle)</li>
-      <li>Udemy — Certified Information Security Manager (training)</li>
-      <li>CISCO — Cyber Security Essentials</li>
-      <li>CISCO — Ethical Hacker</li>
-    </ul>
-  </section>
-
-  <!-- Education & Experience -->
-  <section class="row">
-    <div class="col-6">
-      <div class="card">
-        <h2>Education</h2>
-        <p class="muted">B.E. / B.Tech (CSE) — details per resume</p>
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="card">
-        <h2>Experience</h2>
-        <p class="muted">Internships / roles listed in resume (e.g., Java/CS projects, research/report work).</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hobbies -->
-  <section>
-    <h2>Hobbies</h2>
-    <span class="badge">Film Analysis</span>
-    <span class="badge">Basketball</span>
-    <span class="badge">Blogging</span>
-    <span class="badge">Script Writing</span>
-  </section>
-
-  <div class="hr"></div>
-  <p class="muted">Tip: replace text with exact dates/GPAs/roles from your resume before publishing.</p>
-</main>
-
-<footer>
-  © 2025 • Kishore S • <a href="mailto:kishoresundaram71@gmail.com">Contact</a>
-</footer>
-
-<script>
-function toggleTheme(){
-  document.body.classList.toggle('light');
-  document.getElementById('themeBtn').textContent =
-    document.body.classList.contains('light') ? 'Toggle Theme' : 'Toggle Theme';
-}
-function downloadResume(){
-  // Expects resume.pdf in the same folder as index.html
-  window.open('resume.pdf', '_blank');
-}
-document.getElementById('search').addEventListener('input', function(){
-  const q = this.value.trim().toLowerCase();
-  document.querySelectorAll('#projects .card').forEach(c=>{
-    const tags = (c.getAttribute('data-tags')||'').toLowerCase();
-    c.style.display = q==='' || tags.includes(q) ? '' : 'none';
-  });
-});
-</script>
-
 </body>
 </html>
